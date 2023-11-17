@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">EnergyScanner</string>
+    <string name="Bar_chart">Выработка</string>
+    <string name="PieChart">Потребление</string>
+    <string name="ButtonFromBarChart">Потребление</string>
+    <string name="ButtonPieText">Перейти к \'Выработке\'</string>
+    <string name="Bar_button_text">Перейти к \'Потребление\'</string>
+    <string name="Button_pie_text">Перейти к \'Выработка\'</string>
+    <string name="change_data_button_bar">Обновить даынные</string>
+</resources>
