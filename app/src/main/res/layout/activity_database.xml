@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DatabaseActivity">
+
+    <EditText
+        android:id="@+id/editTextEnergyValue"
+        android:layout_width="255dp"
+        android:layout_height="72dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/database_button_testing_values"
+        app:layout_constraintBottom_toTopOf="@+id/editEnergyDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/database_button_testing_id"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextEnergyValue"
+        app:layout_constraintEnd_toStartOf="@+id/editTextEnergyValue"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextEnergyValue"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editEnergyDate"
+        android:layout_width="255dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginBottom="557dp"
+        android:ems="10"
+        android:inputType="date"
+        android:text="@string/database_button_testing_date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/insertBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insert"
+        app:layout_constraintBottom_toTopOf="@+id/deleteBtn"
+        app:layout_constraintEnd_toStartOf="@+id/fetchBtn"
+        app:layout_constraintHorizontal_bias="0.216"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEnergyDate"
+        app:layout_constraintVertical_bias="0.555" />
+
+    <Button
+        android:id="@+id/fetchBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fetch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEnergyDate"
+        app:layout_constraintVertical_bias="0.078" />
+
+    <Button
+        android:id="@+id/updateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        app:layout_constraintBottom_toBottomOf="@+id/insertBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintStart_toEndOf="@+id/fetchBtn"
+        app:layout_constraintTop_toTopOf="@+id/insertBtn" />
+
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fetchBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
