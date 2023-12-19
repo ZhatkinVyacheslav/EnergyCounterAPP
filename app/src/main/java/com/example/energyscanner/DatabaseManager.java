@@ -30,12 +30,12 @@ public class DatabaseManager {
     public void insert(int value, Date date){
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.ENERGY_VAL, value);
-        contentValues.put(DatabaseHelper.Energy_DATE, date.getTime());
+        contentValues.put(DatabaseHelper.ENERGY_DATE, date.getTime());
         database.insert(DatabaseHelper.DATABASE_TABLE, null, contentValues);
     }
 
     public Cursor fetch(){
-        String[] columns = new String[] { DatabaseHelper.CONTENT_ID, DatabaseHelper.ENERGY_VAL, DatabaseHelper.Energy_DATE };
+        String[] columns = new String[] { DatabaseHelper.CONTENT_ID, DatabaseHelper.ENERGY_VAL, DatabaseHelper.ENERGY_DATE };
         Cursor cursor = database.query(DatabaseHelper.DATABASE_TABLE, columns, null,
                 null, null, null, null);
         if(cursor != null){
@@ -47,7 +47,7 @@ public class DatabaseManager {
     public int update(long _id, int value, Date date){
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.ENERGY_VAL, value);
-        contentValues.put(DatabaseHelper.Energy_DATE, date.getTime());
+        contentValues.put(DatabaseHelper.ENERGY_DATE, date.getTime());
         int ret = database.update(DatabaseHelper.DATABASE_TABLE, contentValues, DatabaseHelper.CONTENT_ID + "=" + _id, null);
         return ret;
     }

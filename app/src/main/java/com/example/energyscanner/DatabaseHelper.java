@@ -11,14 +11,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     static final String DATABASE_NAME = "EnergyDB";
     private static final int DATABASE_VERSION = 1;
 
-    static final String DATABASE_TABLE = "ENERGY";
+    static final String DATABASE_TABLE = "ENERGYTABLE";
     static final String CONTENT_ID = "_ID";
-    static final String ENERGY_VAL = "Energy Value";
-    static final String Energy_DATE = "Energy Date";
+    static final String ENERGY_VAL = "En_Value";
+    static final String ENERGY_DATE = "En_Date";
 
     private static final String CREATE_DB_QUERY = "CREATE TABLE " + DATABASE_TABLE + " ( " + CONTENT_ID +
-            " INTEGER PRIMARY KEY AUTOINCREMENT, " + ENERGY_VAL + " INTEGER, " + Energy_DATE
-            + " DATE PRIMARY KEY AUTOINCREMENT " + " ); ";
+            " INTEGER PRIMARY KEY AUTOINCREMENT, " + ENERGY_VAL + " INTEGER, "  + ENERGY_DATE
+            + " DATE " + " ); ";
     public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
