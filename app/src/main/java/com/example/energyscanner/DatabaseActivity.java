@@ -15,10 +15,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.sql.Date;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 
 public class DatabaseActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     EditText editID;
@@ -66,7 +63,6 @@ public class DatabaseActivity extends AppCompatActivity implements AdapterView.O
                 @SuppressLint("Range") String date = cursor.getString(cursor.getColumnIndex(DatabaseHelper.ENERGY_DATE));
                 // Преобразуем значение даты в объект класса Date
                 Date dateFormatted = new Date(Long.parseLong(date));
-
                 Log.i("DATABASE_TAG", "I HAVE READ ID: " + ID + " ENERGY VALUE: " + Value
                         + " DATE: " + dateFormatted);
             }while(cursor.moveToNext());
