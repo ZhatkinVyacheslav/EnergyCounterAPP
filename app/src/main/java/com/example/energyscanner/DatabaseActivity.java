@@ -9,7 +9,10 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import java.sql.Date;
 import java.text.DateFormat;
@@ -17,12 +20,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
-public class DatabaseActivity extends AppCompatActivity {
+public class DatabaseActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     EditText editID;
     EditText editEnergyValue;
     EditText editDate;
 
     DatabaseManager dbManager;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +43,13 @@ public class DatabaseActivity extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
+        String[] data = { "First", "Second"};
+        Spinner spinner = findViewById(R.id.Testing);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, data);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
     }
 
     public void onInsertBtnClick(View v){
@@ -68,4 +81,13 @@ public class DatabaseActivity extends AppCompatActivity {
         dbManager.delete(Long.parseLong(editID.getText().toString()));
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }

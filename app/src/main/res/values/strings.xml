@@ -11,4 +11,14 @@
     <string name="database_button_testing_id">ID</string>
     <string name="database_button_testing_values">Введите значение</string>
     <string name="database_button_testing_date">ГГГГ-ММ-ДД</string>
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
 </resources>
