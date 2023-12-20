@@ -19,6 +19,9 @@
             android:name=".Bar_Chart"
             android:exported="false" />
         <activity
+            android:name=".DatabaseActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
