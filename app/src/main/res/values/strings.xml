@@ -6,7 +6,7 @@
     <string name="ButtonPieText">Перейти к \'Выработке\'</string>
     <string name="Bar_button_text">Перейти к \'Потребление\'</string>
     <string name="Button_pie_text">Перейти к \'Выработка\'</string>
-    <string name="change_data_button_bar">Обновить даынные</string>
+    <string name="change_data_button_bar">Обновить данные</string>
     <string name="database_button_testing">ДБ тестирование</string>
     <string name="database_button_testing_id">ID</string>
     <string name="database_button_testing_values">Введите значение</string>

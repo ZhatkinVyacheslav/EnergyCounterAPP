@@ -8,39 +8,58 @@
     tools:context=".Bar_Chart">
 
 
+    <Spinner
+        android:id="@+id/spinnerData2"
+        android:layout_width="171dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.898" />
+
     <Button
         android:id="@+id/buttonBar2"
-        android:layout_width="146dp"
+        android:layout_width="171dp"
         android:layout_height="61dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="11dp"
         android:text="@string/change_data_button_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonFromBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/barChart"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerData1"
+        app:layout_constraintVertical_bias="1.0" />
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/barChart"
-        android:layout_width="match_parent"
-        android:layout_height="651dp"/>
+        android:layout_width="409dp"
+        android:layout_height="603dp"
+        tools:layout_editor_absoluteX="-11dp"
+        tools:layout_editor_absoluteY="-11dp" />
 
     <Button
         android:id="@+id/buttonFromBar"
-        android:layout_width="146dp"
+        android:layout_width="171dp"
         android:layout_height="61dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="6dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="11dp"
         android:text="@string/Bar_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonBar2"
-        app:layout_constraintTop_toBottomOf="@+id/barChart"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Spinner
+        android:id="@+id/spinnerData1"
+        android:layout_width="171dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.899" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
