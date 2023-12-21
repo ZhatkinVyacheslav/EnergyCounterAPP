@@ -21,11 +21,7 @@ public class DatabaseActivity extends AppCompatActivity implements AdapterView.O
     EditText editID;
     EditText editEnergyValue;
     EditText editDate;
-
     DatabaseManager dbManager;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +30,7 @@ public class DatabaseActivity extends AppCompatActivity implements AdapterView.O
         editEnergyValue = (EditText) findViewById(R.id.editTextEnergyValue);
         editDate = (EditText) findViewById(R.id.editEnergyDate);
 
-        dbManager = new DatabaseManager(this);
+        dbManager = DatabaseManager.getInstance(this);
         try {
             dbManager.open();
         }catch (Exception e){

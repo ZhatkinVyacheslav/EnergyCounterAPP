@@ -12,9 +12,16 @@ public class DatabaseManager {
     private DatabaseHelper dbHelper;
     private Context context;
     private SQLiteDatabase database;
+    private static DatabaseManager instance;
 
-    public DatabaseManager(Context ctx){
+    private DatabaseManager(Context ctx){
         context = ctx;
+    }
+    public static synchronized DatabaseManager getInstance(Context ctx) {
+        if (instance == null) {
+            instance = new DatabaseManager(ctx);
+        }
+        return instance;
     }
 
     public DatabaseManager open() throws SQLDataException {
