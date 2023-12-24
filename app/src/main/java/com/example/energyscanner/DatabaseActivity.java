@@ -73,6 +73,17 @@ public class DatabaseActivity extends AppCompatActivity implements AdapterView.O
         dbManager.delete(Long.parseLong(editID.getText().toString()));
     }
 
+    @SuppressLint("Range")
+    public void onDeleteBtnAllClick(View v) {
+        Cursor cursor = dbManager.fetch();
+        if (cursor.moveToFirst()) {
+            do {
+               dbManager.delete(cursor.getInt(cursor.getColumnIndex("_ID")));
+            } while (cursor.moveToNext());
+        }
+
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 

@@ -4,11 +4,15 @@ import static com.example.energyscanner.R.id.buttonDBtesting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -36,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         // Create DataGenerator as placeholder for creating data.
         // Generates data in milliseconds placed in the constructor.
         // Then place generated data with a bit latency just to be sure to have no conflict.
-        gen = new DataGenerator(timeDelayMilliseconds);
+        gen = new DataGenerator(timeDelayMilliseconds, returnLastDate());
         timerTask = new TimerTask() {
             @Override
             public void run() {
@@ -78,6 +82,28 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         db.insert(gen.returnValue(), gen.returnDate());
+    }
+
+    @SuppressLint("Range")
+    private Date returnLastDate(){
+        String date = null;
+        Date dateFormatted = null;
+        DatabaseManager db = DatabaseManager.getInstance(this);
+        try {
+            db.open();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        Cursor cursor = dbManager.fetch();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+        cursor.moveToLast();
+        try {
+            date = cursor.getString(cursor.getColumnIndex(DatabaseHelper.ENERGY_DATE));
+            dateFormatted = new Date(Long.parseLong(date));
+        }catch(Exception e){
+            System.out.println("No dates recorded.");
+        }
+        return dateFormatted;
     }
 
 }
