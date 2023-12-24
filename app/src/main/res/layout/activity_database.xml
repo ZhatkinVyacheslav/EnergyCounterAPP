@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:text="Insert"
         android:onClick="onInsertBtnClick"
-        app:layout_constraintBottom_toTopOf="@+id/deleteBtn"
+        app:layout_constraintBottom_toTopOf="@+id/deleteBtnAll"
         app:layout_constraintEnd_toStartOf="@+id/fetchBtn"
         app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,12 +88,24 @@
         app:layout_constraintTop_toTopOf="@+id/insertBtn" />
 
     <Button
-        android:id="@+id/deleteBtn"
+        android:id="@+id/deleteBtnAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Delete"
         android:onClick="onDeleteBtnClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fetchBtn" />
+
+    <Button
+        android:id="@+id/deleteBtnAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:onClick="onDeleteBtnAllClick"
+        android:text="Delete All"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"

@@ -20,7 +20,8 @@ public class DataGenerator {
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 
 
-    DataGenerator(int milliseconds){
+    DataGenerator(int milliseconds, Date lastdate){
+        getLastDate(lastdate);
         System.out.println("Current Date is: " + currentDate);
         returnableDate = currentDate;
         timerTask = new TimerTask() {
@@ -49,6 +50,12 @@ public class DataGenerator {
 
     public java.sql.Date returnDate(){
         return returnableDate;
+    }
+
+    public void getLastDate(Date date){
+        if(date != null){
+            currentDate = date;
+        }
     }
 
 }
